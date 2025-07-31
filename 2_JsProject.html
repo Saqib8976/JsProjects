@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="font-bold mx-28 mt-10">BMI Calculator</h1>
+        <form action="">
+            <p class="mt-5 mx-5"><label for="height" class="font-bold">height in CM:</label><input
+                    class="border-b-black border-1 rounded-2xl p-1" type="text" id="heights"></p>
+
+            <p class="mt-5 mx-5"><label for="weidth" class="font-bold">weight in KG:</label><input
+                    class="border-b-black border-1 rounded-2xl p-1" type="text" id="weights"></p>
+
+            <button class="mt-8 mx-28 border-2 rounded-2xl p-1 ">Calculate</button>
+
+            <div class="font-bold mx-28" id="results"></div>
+            <div class="mt-8 mx-28" id="weight_guide">
+                <h3>BMI WEIGHT GUIDE</h3>
+                <P>Under Weight = less then 18.6</P>
+                <P>Normal range = 18.6 to 24.9 </P>
+                <P>Overweight = greater than 24.9</P>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+<script>
+
+    const form = document.querySelector("form")
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const height = parseInt(document.querySelector("#heights").value)
+        const weight = parseInt(document.querySelector("#weights").value)
+        const result = document.querySelector("#results")
+
+        if (height == "" || height < 0 || isNaN(height)) {
+            result.innerHTML = `please enter a valid height ${height}`
+        }
+        else if (weight == "" || weight < 0 || isNaN(weight)) {
+            result.innerHTML = `please enter a valid height ${weight}`
+        }
+        else {
+            const bmi = (weight / ((height * height) / 10000)).toFixed(2)
+
+            //   show result
+            result.innerHTML = `<span>Your BMI is ${bmi}</span>`;
+        }
+    })
+
+
+</script>
+
+</html>

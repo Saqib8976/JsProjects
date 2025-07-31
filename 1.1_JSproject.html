@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>change bgcolor</title>
+</head>
+
+<body>
+    <h1 class="text-center font-bold mt-24">cahnge color schema</h1>
+    <div class="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto mt-20 ">
+
+        <span class="button grid place-items-center p-2 m-10 w-32 h-32 border-2 bg-green-600" id="green"></span>
+        <span class="button grid place-items-center p-2 m-10 w-32 h-32 border-2 bg-amber-50" id="white"></span>
+        <span class="button grid place-items-center p-2 m-10 w-32 h-32 border-2 bg-yellow-300" id="yellow"></span>
+        <span class="button grid place-items-center p-2 m-10 w-32 h-32 border-2 bg-blue-400" id="aqua"></span>
+        <span class="button grid place-items-center p-2 m-10 w-32 h-32 border-2 bg-orange-400" id="orange"></span>
+
+        <h2 class="mt-10 text-center font-bold">click above to change the color of this page</h2>
+
+    </div>
+
+</body>
+<script>
+
+    const buttons = document.querySelectorAll(".button")
+    const body = document.querySelector("body")
+
+    buttons.forEach(function (button) {
+
+        console.log(button);
+        button.addEventListener('click', function (e) {
+            // console.log(e.target.id);
+
+            if (e.target.id == "green") {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id == "white") {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id == "yellow") {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id == "aqua") {
+                body.style.backgroundColor = e.target.id
+            }
+            if (e.target.id == "orange") {
+                body.style.backgroundColor = e.target.id
+            }
+        })
+
+    })
+
+
+
+</script>
+
+</html>

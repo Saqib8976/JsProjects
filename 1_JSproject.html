@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>change bgcolor</title>
+</head>
+
+<body>
+    <h1 class="text-center mt-32 mb-0 font-bold">Click to change bg color</h1>
+    <div class="flex justify-center mt-10 ">
+
+        <div id="white" class="p-7 border-b-black border-2 w-32 h-32 m-5 bg-amber-50"></div>
+        <div id="green" class="border-b-black border-2 w-32 h-32 m-5 bg-emerald-700 "></div>
+        <div id="yellow" class="border-b-black border-2 w-32 h-32 m-5 bg-amber-400"></div>
+        <div id="purple" class="border-b-black border-2 w-32 h-32 m-5 bg-purple-500"></div>
+    </div>
+</body>
+<script>
+
+    document.querySelector("#white").addEventListener('click', function (e) {
+        if (e.target.id == "white") {
+            const body = document.querySelector("body");
+            body.style.backgroundColor = "white";
+        }
+    }),
+
+        document.querySelector("#green").addEventListener('click', function (e) {
+            if (e.target.id == "green") {
+                const body = document.querySelector("body");
+                body.style.backgroundColor = "green";
+            }
+        }),
+        document.querySelector("#yellow").addEventListener('click', function (e) {
+            if (e.target.id == "yellow") {
+                const body = document.querySelector("body");
+                body.style.backgroundColor = "yellow";
+            }
+        }),
+        document.querySelector("#purple").addEventListener('click', function (e) {
+
+            if (e.target.id == "purple") {
+                const body = document.querySelector("body");
+                body.style.backgroundColor = "purple";
+            }
+        })
+
+</script>
+
+</html>
